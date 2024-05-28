@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+
+
+:root {
+
+    /* CSS HEX */
+    --black: #000000;
+    --dark-purple: #1f1323;
+    --cerise: #da4167;
+    --ghost-white: #f0eff4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--ghost-white);
+    font-family: "Onest", sans-serif;
+    font-style: normal;
+    padding-top: 10rem;
+    height: 2000px;
+    /*Para mostrar el scroll del #main-header con position: fixed; */
+}
+
+#main-header {
+    width: 100vw;
+    padding: 1rem 4rem;
+    background-color: var(--ghost-white);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: fixed;
+    gap: 2rem;
+    top: 0;
+    box-shadow: 0px 4px 106px -20px rgba(0, 0, 0, 0.5);
+}
+
+#main-header picture {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#main-header picture a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-header picture a img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+
+#main-header nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    gap: 2rem;
+}
+
+#main-header nav a {
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    color: var(--cerise);
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+#main-header nav a:hover {
+    color: var(--dark-purple);
+}
+
+#main-header nav a.active {
+    color: var(--ghost-white);
+    background-color: var(--cerise);
+    border-radius: 0.25rem;
+}
+
+#main-header nav a:active {
+    color: var(--ghost-white);
+    background-color: var(--cerise);
+    border-radius: 0.25rem;
+}
