@@ -6,7 +6,7 @@
     /* CSS HEX */
     --black: #000000;
     --dark-purple: #1f1323;
-    --cerise: #da4167;
+    --cerise: #e00a0a;
     --ghost-white: #f0eff4;
 }
 
@@ -21,53 +21,47 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    background-color: var(--ghost-white);
     font-family: "Onest", sans-serif;
     font-style: normal;
+    background-color: var(--black);
+    color: var(--ghost-white);
     padding-top: 10rem;
-    height: 2000px;
-    /*Para mostrar el scroll del #main-header con position: fixed; */
+    gap: 5rem;
+    min-height: 200vh;
+    /*solo para darle altura al body y probar el header fixed*/
 }
 
+/*Header*/
+
 #main-header {
-    width: 100vw;
-    padding: 1rem 4rem;
-    background-color: var(--ghost-white);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     position: fixed;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    padding: 0rem 4rem;
+    height: 50px;
     gap: 2rem;
     top: 0;
-    box-shadow: 0px 4px 106px -20px rgba(0, 0, 0, 0.5);
+    border-top: 5px groove var(--cerise);
+    background-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0.3));
+    box-shadow: 0px 24px 34px 0px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
 }
 
-#main-header picture {
+#main-header img {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 70%;
 }
 
-
-#main-header picture a {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-#main-header picture a img {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-}
-
-
-#main-header nav {
+#main-nav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -75,28 +69,115 @@ body {
     align-items: center;
     flex: 1;
     gap: 2rem;
+    font-size: 0.75rem;
 }
 
-#main-header nav a {
+#main-nav a {
     text-decoration: none;
-    padding: 0.5rem 0.75rem;
-    color: var(--cerise);
     text-transform: uppercase;
+    padding: 0.25rem 0.35rem;
+    color: var(--ghost-white);
     font-weight: 300;
 }
 
-#main-header nav a:hover {
+#main-nav a:hover {
     color: var(--dark-purple);
+    background-color: var(--cerise);
+    border-radius: 0.25rem;
 }
 
-#main-header nav a.active {
+#main-nav a.active {
     color: var(--ghost-white);
     background-color: var(--cerise);
     border-radius: 0.25rem;
 }
 
-#main-header nav a:active {
+#main-nav a:active {
     color: var(--ghost-white);
     background-color: var(--cerise);
     border-radius: 0.25rem;
+}
+
+/*Main*/
+
+#main {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    gap: 3rem;
+}
+
+.slogan {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    gap: 2rem;
+}
+
+.slogan h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.slogan p {}
+
+.slogan .btn-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.slogan a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.slogan .btn-call {
+    color: var(--ghost-white);
+    padding: 0.75rem;
+    background-color: var(--cerise);
+    border-radius: 0.5rem;
+}
+
+.slogan .btn-call:hover {
+    box-shadow: inset 0px 0px 7px 1px rgba(0, 0, 0, 0.5);
+}
+
+.slogan .btn-more {
+    color: var(--cerise);
+    padding: 0.75rem;
+    background-color: var(--ghost-white);
+    border-radius: 0.5rem;
+}
+
+.slogan .btn-more:hover {
+    box-shadow: inset 0px 0px 7px 1px rgba(0, 0, 0, 0.5);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+/*About Us*/
+
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 70%;
+    padding: 2rem;
+    border-top: 1px ridge var(--cerise);
+    border-bottom: 1px ridge var(--cerise);
+}
+
+.about-us p {
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
 }
