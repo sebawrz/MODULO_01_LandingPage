@@ -21,14 +21,14 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-family: "Onest", sans-serif;
     font-style: normal;
     background-color: var(--black);
     color: var(--ghost-white);
-    padding-top: 10rem;
-    gap: 5rem;
-    min-height: 200vh;
-    /*solo para darle altura al body y probar el header fixed*/
+    padding-top: 7rem;
+    gap: 3.5rem;
+
 }
 
 /*Header*/
@@ -38,30 +38,37 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    position: fixed;
     align-items: center;
-    justify-content: center;
-    width: 100vw;
-    padding: 0rem 4rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0.75rem 4rem;
     height: 50px;
     gap: 2rem;
-    top: 0;
     border-top: 2px groove var(--cerise);
     background-image: linear-gradient(to bottom,
             rgba(0, 0, 0, 1),
-            rgba(0, 0, 0, 0.7));
+            rgba(0, 0, 0, 0.9));
     box-shadow: 0px 24px 34px 0px rgba(0, 0, 0, 1);
     backdrop-filter: blur(3px);
+    z-index: 10;
 }
 
-#main-header img {
+#main-header picture {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70%;
+    height: 30px;
 }
 
-#main-nav {
+#main-header picture img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#main-header nav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -72,95 +79,168 @@ body {
     font-size: 0.75rem;
 }
 
-#main-nav a {
+#main-header nav a {
     text-decoration: none;
     text-transform: uppercase;
     padding: 0.25rem 0.35rem;
     color: var(--ghost-white);
-    font-weight: 300;
+    font-weight: 200;
 }
 
-#main-nav a:hover {
-    color: var(--dark-purple);
-    background-color: var(--cerise);
+#main-header nav a:hover {
+    color: var(--ghost-white);
+    background-color: var(--dark-purple);
     border-radius: 0.25rem;
 }
 
-#main-nav a.active {
+#main-header nav a.active {
     color: var(--ghost-white);
     background-color: var(--cerise);
     border-radius: 0.25rem;
 }
 
-#main-nav a:active {
-    color: var(--ghost-white);
-    background-color: var(--cerise);
-    border-radius: 0.25rem;
-}
 
 /*Main*/
 
-#main {
+main {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
     width: 70%;
     gap: 3rem;
+    max-width: 1050px;
 }
 
-.slogan {
+main .slogan {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     width: 55%;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
-.slogan h1 {
+main .slogan h1 {
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    opacity: 0;
+    animation: opacity0to1 1500ms ease-in 500ms forwards;
 }
 
-.slogan p {}
+main .slogan h1 span:nth-child(1) {
+    animation: toCariseAndBack 10000ms ease-in-out 4000ms infinite forwards;
 
-.slogan .btn-container {
+}
+
+main .slogan h1 span:nth-child(2) {
+    animation: toCariseAndBack 10000ms ease-in-out 7000ms infinite forwards;
+
+}
+
+main .slogan h1 span:nth-child(3) {
+    animation: toCariseAndBack 10000ms ease-in-out 10000ms infinite forwards;
+
+}
+
+main .slogan p {
+    font-weight: 200;
+    opacity: 0;
+    animation: opacity0to1 1500ms ease-in 1000ms forwards;
+}
+
+main .slogan .btn-container {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    margin-top: 0.75rem;
+    opacity: 0;
+    animation: opacity0to1 1500ms ease-in 1500ms forwards;
 }
 
-.slogan a {
+main .slogan .btn-container a {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.75rem;
     font-weight: 600;
 }
 
-.slogan .btn-call {
+
+main .slogan .btn-container .btn-call {
     color: var(--ghost-white);
     padding: 0.75rem;
     background-color: var(--cerise);
     border-radius: 0.5rem;
 }
 
-.slogan .btn-call:hover {
+
+main .slogan .btn-container .btn-call:hover {
     box-shadow: inset 0px 0px 7px 1px rgba(0, 0, 0, 0.5);
 }
 
-.slogan .btn-more {
+
+main .slogan .btn-container .btn-more {
     color: var(--cerise);
     padding: 0.75rem;
     background-color: var(--ghost-white);
     border-radius: 0.5rem;
 }
 
-.slogan .btn-more:hover {
+
+main .slogan .btn-container .btn-more:hover {
     box-shadow: inset 0px 0px 7px 1px rgba(0, 0, 0, 0.5);
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    width: 45%;
+
+@keyframes opacity0to1 {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
+
+@keyframes toCariseAndBack {
+
+    10% {
+        color: var(--cerise);
+    }
+
+    20% {
+        color: var(--ghost-white);
+    }
+
+
+}
+
+main .hero-card {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 45%;
+    padding: 1rem;
+    opacity: 0;
+    animation: opacity0to1 2000ms ease-in 2000ms forwards;
+}
+
+main .hero-card picture {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+main .hero-card picture img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
 
 /*About Us*/
 
@@ -168,16 +248,297 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 1050px;
     gap: 1rem;
     width: 70%;
     padding: 2rem;
     border-top: 1px ridge var(--cerise);
     border-bottom: 1px ridge var(--cerise);
+    opacity: 0;
+    animation: opacity0to1 2000ms ease-in 3000ms forwards;
 }
 
 .about-us p {
     text-align: center;
     line-height: 2.5rem;
     font-size: 1.5rem;
+    font-weight: 100;
+}
+
+/*Cards*/
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1050px;
+    width: 70%;
+    gap: 2.5em;
+    padding-bottom: 3rem;
+    border-bottom: 1px ridge var(--cerise);
+}
+
+.cards article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    width: 30%;
+}
+
+.cards article picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+.cards article picture img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.cards article h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 300;
+
+}
+
+.cards article p {
+    text-align: center;
+    font-weight: 100;
+}
+
+/*Contact*/
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    max-width: 1050px;
+    width: 70%;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.contact .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    gap: 2rem;
+}
+
+.info h1 {
+    font-size: 2.75rem;
     font-weight: 400;
+}
+
+.info .blocks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1rem;
+
+}
+
+.info .blocks .location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 40%;
+    gap: 2.0rem;
+}
+
+.info .blocks .location h2 {
+    font-weight: 200;
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.info .blocks .location ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.info .blocks .location ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 100;
+}
+
+.info .blocks .location ul li span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+    background-color: var(--cerise);
+    border-radius: 50%;
+}
+
+.contact picture {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.contact picture img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--cerise);
+    gap: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+footer picture {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+footer img {
+    height: 1.5rem;
+}
+
+@media (max-width: 480px) {
+    body {
+        gap: 3rem;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        gap: 1.5rem;
+    }
+
+    main .slogan {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 1.25rem;
+    }
+
+    main .hero-card {
+        display: none;
+    }
+
+    .about-us {
+        gap: 1rem;
+        width: 90%;
+        padding: 1rem 0rem;
+    }
+
+    .about-us p {
+        text-align: justify;
+        line-height: 1.25rem;
+        font-size: 0.75rem;
+        font-weight: 200;
+    }
+
+    .cards {
+        flex-direction: column;
+        width: 90%;
+        gap: 3rem;
+        padding-bottom: 2rem;
+    }
+
+    .cards article {
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .cards article picture {
+        width: 90%;
+        margin-bottom: 0.75rem;
+    }
+
+
+    .cards article h1 {
+        font-size: 1.25rem;
+        text-align: center;
+        font-weight: 200;
+
+    }
+
+    .cards article p {
+        text-align: center;
+        font-weight: 100;
+    }
+
+
+    .contact {
+        flex-direction: column;
+        width: 90%;
+        padding-bottom: 1rem;
+    }
+
+    .contact .info {
+        width: 100%;
+    }
+
+    .info h1 {
+        font-size: 2rem;
+    }
+
+    .info .blocks {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .info .blocks .location {
+        width: 100%;
+    }
+
+    .contact picture {
+        width: 100%;
+    }
+
+    .contact picture img {
+        object-fit: contain;
+    }
 }
