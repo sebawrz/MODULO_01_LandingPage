@@ -89,12 +89,15 @@ body {
     padding: 0.25rem 0.35rem;
     color: var(--ghost-white);
     font-weight: 200;
+    transition: all 500ms ease-in-out 0ms;
 }
 
 #main-header nav a:hover {
-    color: var(--ghost-white);
-    background-color: var(--dark-purple);
+    color: var(--black);
+    background-color: var(--ghost-white);
     border-radius: 0.25rem;
+    font-weight: 400;
+    transition: all 500ms ease-in-out 0ms;
 }
 
 #main-header nav a.active {
@@ -209,11 +212,14 @@ main .slogan .btn-container .btn-call {
     padding: 0.75rem;
     background-color: var(--cerise);
     border-radius: 0.5rem;
+    transition: all 500ms ease-in-out 0ms;
+
 }
 
 
 main .slogan .btn-container .btn-call:hover {
     box-shadow: inset 0px 0px 7px 1px rgba(0, 0, 0, 0.5);
+    transition: all 500ms ease-in-out 0ms;
 }
 
 
@@ -222,11 +228,13 @@ main .slogan .btn-container .btn-more {
     padding: 0.75rem;
     background-color: var(--ghost-white);
     border-radius: 0.5rem;
+    transition: all 500ms ease-in-out 0ms;
 }
 
 
 main .slogan .btn-container .btn-more:hover {
     box-shadow: inset 0px 0px 7px 1px rgba(0, 0, 0, 0.5);
+    transition: all 500ms ease-in-out 0ms;
 }
 
 
@@ -332,6 +340,7 @@ main .hero-card picture img {
     align-items: center;
     width: 80%;
     margin-bottom: 1rem;
+
 }
 
 .cards article picture img {
@@ -342,6 +351,9 @@ main .hero-card picture img {
     width: 100%;
     object-fit: contain;
 }
+
+
+
 
 .cards article h1 {
     font-size: 1.5rem;
@@ -518,7 +530,7 @@ footer img {
     .about-us {
         gap: 1rem;
         width: 90%;
-        padding: 1rem 0rem;
+        padding: 1.5rem 0rem;
     }
 
     .about-us p {
@@ -592,13 +604,13 @@ footer img {
     .about-us {
         gap: 1rem;
         width: 90%;
-        padding: 1rem 0rem;
+        padding: 1.5rem 0rem;
     }
 
     .about-us p {
         text-align: justify;
         line-height: 1.25rem;
-        font-size: 0.75rem;
+        font-size: 1rem;
         font-weight: 200;
     }
 
